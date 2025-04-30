@@ -1,0 +1,184 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hintText"
+    tools:context=".MainActivity">
+
+    <!-- Image en haut -->
+    <ImageView
+        android:id="@+id/topImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo_mobile_g"
+        android:contentDescription="logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Titre -->
+    <TextView
+        android:id="@+id/topText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="Ajouter un Stage"
+        android:textColor="#FFFCFC"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topImage" />
+
+    <!-- Carte centrale contenant uniquement le formulaire scrollable -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardContainer"
+        android:layout_width="370dp"
+        android:layout_height="561dp"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/background"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topText">
+
+        <!-- ScrollView contenant les champs -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="575dp"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Champs -->
+                <EditText
+                    android:id="@+id/titre"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:hint="Titre du stage"
+                    android:padding="12dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b" />
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:gravity="top"
+                    android:hint="Description"
+                    android:inputType="textMultiLine"
+                    android:padding="12dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b" />
+
+
+                <!--EditText
+                    android:id="@+id/date_creation"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:hint="Date de création"
+                    android:padding="12dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b" /-->
+
+                <EditText
+                    android:id="@+id/competences_requises"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:gravity="top"
+                    android:hint="Compétences requises"
+                    android:inputType="textMultiLine"
+                    android:padding="12dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b" />
+
+                <!--EditText
+                    android:id="@+id/id_encadrant"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:hint="ID Encadrant"
+                    android:padding="12dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b" /-->
+
+                <!--EditText
+                    android:id="@+id/statut"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:hint="Statut (actif, archivé...)"
+                    android:padding="12dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b" /-->
+
+                <EditText
+                    android:id="@+id/localisation"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:hint="Localisation"
+                    android:padding="12dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b" />
+
+                <EditText
+                    android:id="@+id/duree"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:hint="Durée (semaines/mois)"
+                    android:padding="12dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b" />
+
+                <EditText
+                    android:id="@+id/nombre_places"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:hint="Nombre de places"
+                    android:padding="12dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b"
+                    android:inputType="number"
+                    />
+
+                <!-- Bouton Ajouter -->
+                <Button
+                    android:id="@+id/btnAjouter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="@color/primary"
+                    android:text="Ajouter"
+                    android:textColor="#FFFFFF" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

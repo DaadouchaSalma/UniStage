@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "418660636241",
+    "project_id": "unistage-5174b",
+    "storage_bucket": "unistage-5174b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:418660636241:android:e61a3cf5d4214b25414a70",
+        "android_client_info": {
+          "package_name": "com.example.unistage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2urCG16qTXHh1haQyxnOGBFt3obIQbt8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

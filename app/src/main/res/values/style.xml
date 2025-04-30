@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="UnistageTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:background">@color/background</item>
+    </style>
+
+    <!-- Champ de texte personnalisé -->
+    <style name="UnistageEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:backgroundTint">@color/accent</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="hintTextColor">@color/hintText</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Bouton stylisé -->
+    <style name="UnistageButton" parent="Widget.AppCompat.Button">
+        <item name="android:backgroundTint">@color/primaryDark</item>
+        <item name="android:textColor">@color/buttonText</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+    <!-- Spinner stylisé -->
+    <style name="UnistageSpinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:backgroundTint">@color/accent</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/textPrimary</item>
+    </style>
+</resources>

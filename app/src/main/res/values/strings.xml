@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">UniStage</string>
+    <string-array name="statuts_array">
+        <item>Actif</item>
+        <item>Archivé</item>
+        <item>Clôturé</item>
+    </string-array>
+</resources>
+
