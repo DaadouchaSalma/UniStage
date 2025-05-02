@@ -7,9 +7,9 @@ public class Offre {
     private String description ;
     private LocalDate dateCreation;
     private String competencesRequises;
-    private String idEncadrant; // Référence à un encadrant (id)
+    private String idEncadrant;
     private String localisation;
-    private String duree; // Exemple : "8 semaines" ou "2 mois"
+    private String duree;
     private int nombrePlaces;
 
     public Offre(String titre, int nombrePlaces, String duree, String localisation, String competencesRequises, String description) {
