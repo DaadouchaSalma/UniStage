@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topText">
 
-        <!-- ScrollView contenant les champs -->
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="575dp"
@@ -60,23 +60,40 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <!-- Champs -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Titre"
+                    android:textColor="@color/textPrimary"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="15dp" />
                 <EditText
                     android:id="@+id/titre"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
                     android:background="@drawable/rounded_edittext"
                     android:hint="Titre du stage"
                     android:padding="12dp"
                     android:textColor="#262f71"
                     android:textColorHint="#6a649b" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:textColor="@color/textPrimary"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="15dp" />
                 <EditText
                     android:id="@+id/description"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:layout_marginTop="12dp"
                     android:background="@drawable/rounded_edittext"
                     android:gravity="top"
                     android:hint="Description"
@@ -86,22 +103,21 @@
                     android:textColorHint="#6a649b" />
 
 
-                <!--EditText
-                    android:id="@+id/date_creation"
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="Compétences Requises"
+                    android:textColor="@color/textPrimary"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
                     android:layout_marginTop="16dp"
-                    android:background="@drawable/rounded_edittext"
-                    android:hint="Date de création"
-                    android:padding="12dp"
-                    android:textColor="#262f71"
-                    android:textColorHint="#6a649b" /-->
+                    android:layout_marginBottom="15dp" />
 
                 <EditText
                     android:id="@+id/competences_requises"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:layout_marginTop="12dp"
                     android:background="@drawable/rounded_edittext"
                     android:gravity="top"
                     android:hint="Compétences requises"
@@ -110,55 +126,63 @@
                     android:textColor="#262f71"
                     android:textColorHint="#6a649b" />
 
-                <!--EditText
-                    android:id="@+id/id_encadrant"
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="Localisation"
+                    android:textColor="@color/textPrimary"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
                     android:layout_marginTop="16dp"
-                    android:background="@drawable/rounded_edittext"
-                    android:hint="ID Encadrant"
-                    android:padding="12dp"
-                    android:textColor="#262f71"
-                    android:textColorHint="#6a649b" /-->
-
-                <!--EditText
-                    android:id="@+id/statut"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/rounded_edittext"
-                    android:hint="Statut (actif, archivé...)"
-                    android:padding="12dp"
-                    android:textColor="#262f71"
-                    android:textColorHint="#6a649b" /-->
+                    android:layout_marginBottom="15dp" />
 
                 <EditText
                     android:id="@+id/localisation"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
                     android:background="@drawable/rounded_edittext"
                     android:hint="Localisation"
                     android:padding="12dp"
                     android:textColor="#262f71"
                     android:textColorHint="#6a649b" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Durée"
+                    android:textColor="@color/textPrimary"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="15dp" />
+
                 <EditText
                     android:id="@+id/duree"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
                     android:background="@drawable/rounded_edittext"
                     android:hint="Durée (semaines/mois)"
                     android:padding="12dp"
                     android:textColor="#262f71"
                     android:textColorHint="#6a649b" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre de Places"
+                    android:textColor="@color/textPrimary"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="15dp" />
+
                 <EditText
                     android:id="@+id/nombre_places"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
                     android:background="@drawable/rounded_edittext"
                     android:hint="Nombre de places"
                     android:padding="12dp"
@@ -172,7 +196,11 @@
                     android:id="@+id/btnAjouter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="24dp"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
                     android:backgroundTint="@color/primary"
                     android:text="Ajouter"
                     android:textColor="#FFFFFF" />
