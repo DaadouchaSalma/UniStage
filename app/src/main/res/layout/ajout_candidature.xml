@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hintText"
+    tools:context=".candidature.ajouterCandActivity">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/topImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/logo_mobile_g"
+        android:contentDescription="logo"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Titre -->
+    <TextView
+        android:id="@+id/topText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="Ajouter votre candidature"
+        android:textColor="#FFFCFC"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/topImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Form Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardContainer"
+        android:layout_width="370dp"
+        android:layout_height="561dp"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/background"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintTop_toBottomOf="@id/topText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="575dp"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Fonction pour ajouter Label + Input -->
+                <!-- Exemple : Profil LinkedIn -->
+                <!-- Exemple : Label + champ pour LinkedIn -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Profil LinkedIn"
+                    android:textColor="#262f71"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="15dp" />
+
+                <EditText
+                    android:id="@+id/profil_linkedin"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:hint="Lien de votre profil LinkedIn"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="10dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b"
+                    android:inputType="textUri" />
+
+                <!-- GitHub -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lien GitHub"
+                    android:textColor="#262f71"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="15dp" />
+
+                <EditText
+                    android:id="@+id/lien_github"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:hint="Lien vers votre GitHub"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="10dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b"
+                    android:inputType="textUri" />
+
+                <!-- Compétences -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Compétences"
+                    android:textColor="#262f71"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="15dp" />
+
+                <EditText
+                    android:id="@+id/competences"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:gravity="top"
+                    android:hint="Liste de vos compétences"
+                    android:padding="16dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b"
+                    android:inputType="textMultiLine" />
+
+                <!-- Répéter la même structure pour les autres champs -->
+
+                <!-- Expériences -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Expériences"
+                    android:textColor="#262f71"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="15dp" />
+
+                <EditText
+                    android:id="@+id/experiences"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:gravity="top"
+                    android:hint="Décrivez vos expériences"
+                    android:padding="16dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b"
+                    android:inputType="textMultiLine" />
+
+                <!-- Formations -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Formations"
+                    android:textColor="#262f71"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="15dp" />
+
+                <EditText
+                    android:id="@+id/formations"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:gravity="top"
+                    android:hint="Vos formations académiques"
+                    android:padding="16dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b"
+                    android:inputType="textMultiLine" />
+
+                <!-- Langues -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Langues"
+                    android:textColor="#262f71"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="15dp" />
+
+                <EditText
+                    android:id="@+id/langues"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:hint="Langues maîtrisées"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="10dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b" />
+
+                <!-- Certifications -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Certifications"
+                    android:textColor="#262f71"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="15dp" />
+
+                <EditText
+                    android:id="@+id/certifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:gravity="top"
+                    android:hint="Vos certifications"
+                    android:padding="16dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b"
+                    android:inputType="textMultiLine" />
+
+                <!-- Projets -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Projets"
+                    android:textColor="#262f71"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="15dp" />
+
+                <EditText
+                    android:id="@+id/projets"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:gravity="top"
+                    android:hint="Projets réalisés"
+                    android:padding="16dp"
+                    android:textColor="#262f71"
+                    android:textColorHint="#6a649b"
+                    android:inputType="textMultiLine" />
+
+                <!-- Bouton final -->
+                <Button
+                    android:id="@+id/btnCandidater"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="24dp"
+                    android:backgroundTint="@color/primary"
+                    android:text="Soumettre"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
