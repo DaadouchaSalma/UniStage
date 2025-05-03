@@ -1,1 +1,58 @@
+# =============== Android ===============
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
 /build
+/captures
+.externalNativeBuild
+.cxx
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services
+google-services.json
+# Firebase Crashlytics (native symbols)
+**/fabric/*.properties
+
+# Signing files
+signing.properties
+
+# Android Studio
+.idea/
+*.iws
+*.ipr
+
+# Log/Temp files
+*.log
+*.tmp
+*.bak
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Gradle
+.gradle/
+build/
+*/build/
+!gradle-wrapper.jar
+
+# Kotlin
+*.kotlin_module
+
+# local configurations
+local.properties
+
+# Firebase Crashlytics/Performance
+firebase-performance/*.json
+crashlytics-build.properties
