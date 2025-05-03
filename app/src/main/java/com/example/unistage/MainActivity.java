@@ -29,7 +29,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     FirebaseFirestore db;
     EditText titreInput ;
     EditText descriptionInput ;
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setupDrawer(R.layout.activity_main);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         db = FirebaseFirestore.getInstance();

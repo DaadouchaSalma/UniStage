@@ -5,5 +5,12 @@
         <item>Archivé</item>
         <item>Clôturé</item>
     </string-array>
+    <string name="nav_home">Accueil</string>
+    <string name="nav_profile">Profil</string>
+    <string name="nav_offres">Offres</string>
+    <string name="nav_candidatures">Candidatures</string>
+    <string name="nav_logout">Déconnexion</string>
+    <string name="navigation_drawer_open">Open drawer</string>
+    <string name="navigation_drawer_close">Close drawer</string>
 </resources>
 
