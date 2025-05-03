@@ -14,7 +14,7 @@
 .externalNativeBuild
 .cxx
 
-# Keystore files
+#keystore files
 *.jks
 *.keystore
 
