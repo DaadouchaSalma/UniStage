@@ -42,9 +42,9 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setupDrawer(R.layout.activity_main);
+
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
         db = FirebaseFirestore.getInstance();
         titreInput = findViewById(R.id.titre);
         descriptionInput = findViewById(R.id.description);
@@ -85,5 +85,8 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_main; // le layout spécifique à cette activité
+    }
 }

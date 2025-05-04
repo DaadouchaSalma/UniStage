@@ -14,6 +14,7 @@ firebaseAuth = "23.2.0"
 play-services-auth = "20.7.0"
 drawerlayout = "1.1.1"
 
+
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
