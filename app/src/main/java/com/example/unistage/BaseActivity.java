@@ -2,8 +2,11 @@ package com.example.unistage;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewStub;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -18,54 +21,46 @@ import com.google.android.material.navigation.NavigationView;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
+    protected DrawerLayout drawerLayout;
+    protected NavigationView navigationView;
+    private ActionBarDrawerToggle drawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_base_drawer);
-    }
+        super.setContentView(R.layout.activity_base_drawer);
 
-    // Appel dans onCreate() de chaque sous-activité
-    protected void setupDrawer(int layoutResID) {
-        // On insère le contenu spécifique à l'activité dans le drawer
-        DrawerLayout fullLayout = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_base_drawer, null);
-        FrameLayout contentFrame = fullLayout.findViewById(R.id.content_frame);
-        getLayoutInflater().inflate(layoutResID, contentFrame, true);
-        super.setContentView(fullLayout);
-
+        //Récuperer les views
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        drawerLayout = fullLayout.findViewById(R.id.drawer_layout);
-        navigationView = fullLayout.findViewById(R.id.navigation_view);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+
+        // Setup du bouton hamburger
+        drawerToggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar,
                 R.string.navigation_drawer_open,
-                R.string.navigation_drawer_close);
+                R.string.navigation_drawer_close
+        );
+        drawerLayout.addDrawerListener(drawerToggle);
+        drawerToggle.syncState();
 
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState(); // ← active le bouton hamburger
+        // Gère le layout spécifique à chaque activité
+        int layoutId = getLayoutResourceId();
+        if (layoutId != 0) {
+            LayoutInflater inflater = LayoutInflater.from(this);
+            View contentView = inflater.inflate(layoutId, null);
+            FrameLayout contentFrame = findViewById(R.id.content_frame);
+            contentFrame.addView(contentView);
+        }
 
-        View headerView = navigationView.getHeaderView(0);
-        TextView userName = headerView.findViewById(R.id.userName);
-        userName.setText("Ali Ben Salah");
-
-        // Navigation menu item click listener
+        // Tu peux ici ajouter un listener pour gérer les clics du menu :
         navigationView.setNavigationItemSelectedListener(item -> {
-            int id = item.getItemId();
-            if (id == R.id.nav_home) {
-                startActivity(new Intent(this, MainActivity.class));
-            } else if (id == R.id.nav_offres) {
-                startActivity(new Intent(this, ListOffreActivity.class));
-            } else if (id == R.id.nav_candidatures) {
-                startActivity(new Intent(this, ajouterCandActivity.class));
-            } else if (id == R.id.nav_logout) {
-                // Handle logout
-            }
+            // Gère les actions ici (ex: startActivity)
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
         });
     }
+
+    protected abstract int getLayoutResourceId();
 }
