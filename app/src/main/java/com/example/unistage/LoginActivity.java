@@ -11,6 +11,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.unistage.offre.AddOffreActivity;
+import com.example.unistage.offre.ListOffreActivity;
 import com.example.unistage.offre.UpdateOffreActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -65,8 +66,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        loginButton.setEnabled(false);
-        loginButton.setText("Connexion en cours...");
+
 
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                                         if (documentSnapshot.exists()) {
                                             // Si etudiant
                                             Toast.makeText(LoginActivity.this, "Connexion réussie!", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(LoginActivity.this, AddOffreActivity.class));
+                                            startActivity(new Intent(LoginActivity.this, ListOffreActivity.class));
                                             finish();
                                         } else {
 
@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                                                         if (documentSnapshotEncadrant.exists()) {
                                                             // Si encadrant
                                                             Toast.makeText(LoginActivity.this, "Connexion réussie!", Toast.LENGTH_SHORT).show();
-                                                            startActivity(new Intent(LoginActivity.this, UpdateOffreActivity.class));
+                                                            startActivity(new Intent(LoginActivity.this, AddOffreActivity.class));
                                                             finish();
                                                         } else {
                                                             // ni etudiant ni encadrant

@@ -21,9 +21,9 @@ public class Candidature {
 
         private String statut;
 
-    public Candidature( String profilLinkedin, String lienGithub, String competences, String experiences, String formations, String langues, String certifications, String projets) {
-        this.idEtudiant = "1SIyQDvUyrUBtNwXuRxj";
-        this.idOffre = "1SIyQDvUyrUBtNwXuRxU";
+    public Candidature( String user,String id,String profilLinkedin, String lienGithub, String competences, String experiences, String formations, String langues, String certifications, String projets) {
+        this.idEtudiant = user;
+        this.idOffre = id;
         this.dateCandidature = LocalDate.now();
         this.profilLinkedin = profilLinkedin;
         this.lienGithub = lienGithub;

@@ -9,6 +9,8 @@ import androidx.activity.EdgeToEdge;
 
 import com.example.unistage.BaseActivity;
 import com.example.unistage.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class AddOffreActivity extends BaseActivity {
@@ -54,12 +56,22 @@ public class AddOffreActivity extends BaseActivity {
                 Toast.makeText(this, "Le nombre de places doit être supérieur à zéro", Toast.LENGTH_SHORT).show();
                 return;
             }
-            Offre offre = new Offre(titre, nb_place,duree,localisation,competance,description);
+            FirebaseAuth mAuth = FirebaseAuth.getInstance();
+            FirebaseUser user = mAuth.getCurrentUser();
+            Offre offre = new Offre(user.getUid(),titre, nb_place,duree,localisation,competance,description);
 
             db.collection("offres")
                     .add(offre)
                     .addOnSuccessListener(documentReference -> {
+
                         Toast.makeText(this, "Offre ajoutée !", Toast.LENGTH_SHORT).show();
+                        titreInput.setText("");
+                        descriptionInput.setText("");
+                        competanceInput.setText("");
+                        localisationInput.setText("");
+                        dureeInput.setText("");
+                        nb_placeInput.setText("");
+
                     })
                     .addOnFailureListener(e -> {
                         Toast.makeText(this, "Erreur : " + e.getMessage(), Toast.LENGTH_SHORT).show();
