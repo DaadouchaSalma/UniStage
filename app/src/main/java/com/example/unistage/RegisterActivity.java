@@ -9,6 +9,8 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.unistage.offre.AddOffreActivity;
+import com.example.unistage.offre.UpdateOffreActivity;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.radiobutton.MaterialRadioButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -139,7 +141,7 @@ public class RegisterActivity extends AppCompatActivity {
                                      .addOnSuccessListener(aVoid -> {
                                          // Redirection
                                          Toast.makeText(RegisterActivity.this, "Inscription réussie!", Toast.LENGTH_SHORT).show();
-                                         startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                                         startActivity(new Intent(RegisterActivity.this, AddOffreActivity.class));
                                          finish();
                                      })
                                      .addOnFailureListener(e -> {
