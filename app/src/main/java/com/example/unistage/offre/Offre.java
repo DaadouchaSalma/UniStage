@@ -3,6 +3,7 @@ package com.example.unistage.offre;
 import java.time.LocalDate;
 
 public class Offre {
+    private String id;
     private String titre ;
     private String description ;
     private String dateCreation;
@@ -10,9 +11,12 @@ public class Offre {
     private String idEncadrant;
     private String localisation;
     private String duree;
+
+
+
     private int nombrePlaces;
 
-    public Offre(String titre, int nombrePlaces, String duree, String localisation, String competencesRequises, String description) {
+    public Offre( String user,String titre, int nombrePlaces, String duree, String localisation, String competencesRequises, String description) {
         this.titre = titre;
         this.nombrePlaces = nombrePlaces;
         this.duree = duree;
@@ -20,11 +24,19 @@ public class Offre {
         this.competencesRequises = competencesRequises;
         this.dateCreation = LocalDate.now().toString();
         this.description = description;
-        this.idEncadrant="2ULm0A3dEFC76igR3khp";
+        this.idEncadrant=user;
     }
 
     public Offre (){
 
+    }
+
+
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitre() {

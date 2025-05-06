@@ -13,7 +13,7 @@
         android:theme="@style/Theme.UniStage"
         tools:targetApi="31">
         <activity
-            android:name=".offre.ListOffreActivity"
+            android:name=".LoginActivity"
             android:windowSoftInputMode="adjustResize"
             android:exported="true">
             <intent-filter>
@@ -35,10 +35,10 @@
             <!--/intent-filter-->
         </activity>
         <activity android:name=".offre.UpdateOffreActivity" />
-        <!--activity android:name=".offre.ListOffreActivity" /-->
+       <activity android:name=".offre.ListOffreActivity" />
         <activity android:name=".offre.DetailOffreActivity" />
         <activity android:name=".offre.AddOffreActivity" />
-        <activity android:name=".LoginActivity" />
+<!--        <activity android:name=".LoginActivity" />-->
         <activity android:name=".candidature.ajouterCandActivity" />
 
 

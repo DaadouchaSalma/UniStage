@@ -2,6 +2,7 @@ package com.example.unistage.offre;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,9 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.ViewHolder> 
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetailOffreActivity.class);
+            intent.putExtra("offreId", offre.getId());
+            Log.d("FIRESTORE_ID", "Offre ID adaptor: " + offre.getId());
+
             intent.putExtra("offreTitre", offre.getTitre());
             intent.putExtra("offreDescription", offre.getDescription());
             intent.putExtra("offreCompetence", offre.getCompetencesRequises());
@@ -54,6 +58,7 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.ViewHolder> 
             intent.putExtra("imageResId", randomImage); // image drawable resId
             context.startActivity(intent);
         });
+
     }
 
     @Override

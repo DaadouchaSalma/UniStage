@@ -1,6 +1,7 @@
 package com.example.unistage.offre;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -39,6 +40,7 @@ public class ListOffreActivity extends BaseActivity {
         db.collection("offres").get().addOnSuccessListener(queryDocumentSnapshots -> {
             for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
                 String titre = doc.getString("titre");
+                String idOffre = doc.getId();
                 String description = doc.getString("description");
                 String competencesRequises = doc.getString("competencesRequises");
                 String localisation = doc.getString("localisation");
@@ -48,11 +50,12 @@ public class ListOffreActivity extends BaseActivity {
                 int nombrePlaces = (nombrePlacesLong != null) ? nombrePlacesLong.intValue() : 0;
                 //String dateStr = doc.getString("dateCreation");
 
-                Offre offre = new Offre(titre, nombrePlaces, duree, localisation, competencesRequises, description);
+                Offre offre = new Offre("",titre, nombrePlaces, duree, localisation, competencesRequises, description);
 
                 // Si tu veux affecter la date manuellement (car elle n'est pas dans le constructeur)
                 //offre.setDateCreation(dateStr);  // Nécessite d'ajouter un setter dans ta classe Offre
-
+                offre.setId(doc.getId());
+                Log.d("FIRESTORE_ID", "Offre ID liste: " + doc.getId()+"offre"+offre.getId());
                 offres.add(offre);
             }
 
