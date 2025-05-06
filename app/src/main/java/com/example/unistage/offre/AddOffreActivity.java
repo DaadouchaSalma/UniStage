@@ -1,35 +1,17 @@
-package com.example.unistage;
-
-import static android.content.ContentValues.TAG;
+package com.example.unistage.offre;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentReference;
+import com.example.unistage.BaseActivity;
+import com.example.unistage.R;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class MainActivity extends BaseActivity {
+public class AddOffreActivity extends BaseActivity {
     FirebaseFirestore db;
     EditText titreInput ;
     EditText descriptionInput ;
@@ -87,6 +69,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected int getLayoutResourceId() {
-        return R.layout.activity_main; // le layout spécifique à cette activité
+        return R.layout.activity_add_offre; // le layout spécifique à cette activité
     }
 }

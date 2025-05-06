@@ -1,9 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".BaseActivity"
+    tools:openDrawer="start">
+
+    <!-- Drawer amélioré avec CardView pour moderniser -->
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,17 +23,21 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="" />
 
         <!-- Content -->
+
         <FrameLayout
             android:id="@+id/content_frame"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_height="match_parent" />
+
+
     </LinearLayout>
 
-    <!-- Drawer amélioré avec CardView pour moderniser -->
     <androidx.cardview.widget.CardView
         android:layout_width="280dp"
         android:layout_height="wrap_content"
@@ -42,8 +53,8 @@
             android:id="@+id/nav_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:menu="@drawable/menu_drawer"
+            android:layout_gravity="start"
+            app:menu="@menu/menu_drawer"
             app:headerLayout="@layout/nav_header" />
     </androidx.cardview.widget.CardView>
 

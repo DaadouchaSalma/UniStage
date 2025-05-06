@@ -1,11 +1,11 @@
-package com.example.unistage;
+package com.example.unistage.offre;
 
 import java.time.LocalDate;
 
 public class Offre {
     private String titre ;
     private String description ;
-    private LocalDate dateCreation;
+    private String dateCreation;
     private String competencesRequises;
     private String idEncadrant;
     private String localisation;
@@ -18,7 +18,7 @@ public class Offre {
         this.duree = duree;
         this.localisation = localisation;
         this.competencesRequises = competencesRequises;
-        this.dateCreation = LocalDate.now();
+        this.dateCreation = LocalDate.now().toString();
         this.description = description;
         this.idEncadrant="2ULm0A3dEFC76igR3khp";
     }
@@ -43,11 +43,11 @@ public class Offre {
         this.description = description;
     }
 
-    public LocalDate getDateCreation() {
+    public String getDateCreation() {
         return dateCreation;
     }
 
-    public void setDateCreation(LocalDate dateCreation) {
+    public void setDateCreation(String dateCreation) {
         this.dateCreation = dateCreation;
     }
 

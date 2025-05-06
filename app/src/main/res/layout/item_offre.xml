@@ -1,0 +1,48 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="6dp"
+    card_view:cardBackgroundColor="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/imageOffre"
+            android:layout_width="143dp"
+            android:layout_height="120dp"
+            android:background="@drawable/bgmg"
+            android:contentDescription="Image"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/titreOffre"
+            android:layout_width="141dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:paddingTop="8dp"
+            android:singleLine="false"
+            android:text="Title Goes Here"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/localisationOffre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Subtitle or description"
+            android:textColor="#666"
+            android:textSize="14sp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

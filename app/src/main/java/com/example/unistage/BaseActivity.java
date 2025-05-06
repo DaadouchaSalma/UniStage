@@ -35,6 +35,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.nav_view);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false); // Hide title
+        }
+        toolbar.setContentInsetsRelative(0, 0);
+
 
         // Setup du bouton hamburger
         drawerToggle = new ActionBarDrawerToggle(
