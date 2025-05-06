@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -33,22 +34,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         //Récuperer les views
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayShowTitleEnabled(false); // Hide title
-        }
-        toolbar.setContentInsetsRelative(0, 0);
+        ImageButton hamburgerButton = findViewById(R.id.hamburger_button);
+        hamburgerButton.setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
 
-
-        // Setup du bouton hamburger
-        drawerToggle = new ActionBarDrawerToggle(
-                this, drawerLayout, toolbar,
-                R.string.navigation_drawer_open,
-                R.string.navigation_drawer_close
-        );
-        drawerLayout.addDrawerListener(drawerToggle);
-        drawerToggle.syncState();
 
         // Gère le layout spécifique à chaque activité
         int layoutId = getLayoutResourceId();
