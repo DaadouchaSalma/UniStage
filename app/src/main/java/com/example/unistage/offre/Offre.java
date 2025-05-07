@@ -11,6 +11,7 @@ public class Offre {
     private String idEncadrant;
     private String localisation;
     private String duree;
+    private int nombreCandidatures;
 
 
 
@@ -31,6 +32,12 @@ public class Offre {
 
     }
 
+    public int getNombreCandidatures() {
+        return nombreCandidatures;
+    }
+    public void setNombreCandidatures(int nombreCandidatures) {
+        this.nombreCandidatures = nombreCandidatures;
+    }
 
     public String getId() {
         return id;
