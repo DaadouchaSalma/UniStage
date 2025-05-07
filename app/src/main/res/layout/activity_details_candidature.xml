@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:divider="?android:attr/dividerHorizontal"
+        android:showDividers="middle">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="25dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/primary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Salma Daadoucha"
+                    android:textColor="@color/buttonText"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:fontFamily="sans-serif-condensed"/>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- SECTION 1 -->
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/white">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="INFORMATIONS GÉNÉRALES"
+                    android:icon="@drawable/circle_info_solid"
+                    android:textStyle="bold"
+                    android:textColor="@color/primaryDark"
+                    android:textSize="18sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="12dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/hintText"
+                    android:layout_marginBottom="16dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔗 LinkedIn"
+                    android:textStyle="bold"
+                    android:textColor="@color/accent"
+                    android:layout_marginBottom="4dp"
+                    />
+
+                <TextView
+                    android:id="@+id/detailLinkedin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:textColor="@color/primary"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🐱 GitHub"
+                    android:textStyle="bold"
+                    android:textColor="@color/accent"
+                    android:layout_marginBottom="4dp"
+                     />
+
+                <TextView
+                    android:id="@+id/detailGithub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:textColor="@color/primary" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- SECTION 2 -->
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/white">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="COMPÉTENCES et LANGUES"
+                    android:icon="@drawable/screwdriver_wrench_solid"
+                    android:textStyle="bold"
+                    android:textColor="@color/primaryDark"
+                    android:textSize="18sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="12dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/hintText"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:text="Compétences Clés"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    
+                    android:textSize="16sp"
+                    android:textColor="@color/primaryDark"
+                    android:layout_marginBottom="8dp"
+                    android:lineSpacingExtra="6dp"/>
+
+                <TextView
+                    android:id="@+id/detailCompetences"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textPrimary"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:text="Langues"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    
+                    android:textSize="16sp"
+                    android:textColor="@color/primaryDark"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/detailLangues"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textPrimary"
+                    android:lineSpacingExtra="6dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- SECTION 3 -->
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/white">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PARCOURS"
+                    android:icon="@drawable/graduation_cap_solid"
+                    android:textStyle="bold"
+                    android:textColor="@color/primaryDark"
+                    android:textSize="18sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="12dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/hintText"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:text="💼 EXPÉRIENCES PROFESSIONNELLES"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    
+                    android:textSize="16sp"
+                    android:textColor="@color/primaryDark"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/detailExperiences"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textPrimary"
+                    android:layout_marginBottom="16dp"
+                    android:lineSpacingExtra="6dp"/>
+
+                <TextView
+                    android:text="🎓 FORMATIONS ACADÉMIQUES"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    
+                    android:textSize="16sp"
+                    android:textColor="@color/primaryDark"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/detailFormations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textPrimary"
+                    android:lineSpacingExtra="6dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- SECTION 4 -->
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/white">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PROJETS et CERTIFICATIONS"
+                    android:drawableLeft="@drawable/rocket_solid"
+                    android:textStyle="bold"
+                    android:textColor="@color/primaryDark"
+                    android:textSize="18sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="12dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/hintText"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:text="📜 CERTIFICATIONS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    
+                    android:textSize="16sp"
+                    android:textColor="@color/primaryDark"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/detailCertifications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textPrimary"
+                    android:layout_marginBottom="16dp"
+                    android:lineSpacingExtra="6dp"/>
+
+                <TextView
+                    android:text="🚀 PROJETS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    
+                    android:textSize="16sp"
+                    android:textColor="@color/primaryDark"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/detailProjets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textPrimary"
+                    android:lineSpacingExtra="6dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>
