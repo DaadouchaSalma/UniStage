@@ -20,7 +20,7 @@
             android:layout_marginTop="25dp"
             app:cardElevation="4dp"
             app:cardCornerRadius="8dp"
-            app:cardBackgroundColor="@color/primary">
+            app:cardBackgroundColor="@color/hintText">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -29,15 +29,25 @@
                 android:padding="24dp">
 
                 <TextView
-
+                    android:id="@+id/detailNomComplet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Salma Daadoucha"
+
                     android:textColor="@color/buttonText"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:gravity="center"
                     android:fontFamily="sans-serif-condensed"/>
+                <TextView
+                    android:id="@+id/detailEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:textColor="@color/buttonText"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:gravity="center"
+                    android:fontFamily="sans-serif"/>
 
 
             </LinearLayout>
@@ -63,16 +73,28 @@
                 android:orientation="vertical"
                 android:padding="24dp"
                 android:layout_marginBottom="8dp">
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="INFORMATIONS GÉNÉRALES"
-                    android:icon="@drawable/circle_info_solid"
-                    android:textStyle="bold"
-                    android:textColor="@color/primaryDark"
-                    android:textSize="18sp"
+                    android:orientation="horizontal"
                     android:layout_marginTop="16dp"
-                    android:layout_marginBottom="12dp" />
+                    android:layout_marginBottom="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/circle_info_solid"
+                        app:tint="@color/primaryDark"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="INFORMATIONS GÉNÉRALES"
+                        android:textStyle="bold"
+                        android:textColor="@color/primaryDark"
+                        android:textSize="18sp"/>
+                </LinearLayout>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -133,16 +155,29 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="24dp">
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="COMPÉTENCES et LANGUES"
-                    android:icon="@drawable/screwdriver_wrench_solid"
-                    android:textStyle="bold"
-                    android:textColor="@color/primaryDark"
-                    android:textSize="18sp"
+                    android:orientation="horizontal"
                     android:layout_marginTop="16dp"
-                    android:layout_marginBottom="12dp" />
+                    android:layout_marginBottom="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/screwdriver_wrench_solid"
+                        app:tint="@color/primaryDark"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="COMPÉTENCES ET LANGUES"
+                        android:textStyle="bold"
+                        android:textColor="@color/primaryDark"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -156,16 +191,17 @@
                     android:textStyle="bold"
                     
                     android:textSize="16sp"
-                    android:textColor="@color/primaryDark"
+                    android:textColor="@color/hintText"
                     android:layout_marginBottom="8dp"
-                    android:lineSpacingExtra="6dp"/>
+                    />
 
                 <TextView
                     android:id="@+id/detailCompetences"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/textPrimary"
-                    android:layout_marginBottom="16dp" />
+                    android:layout_marginBottom="16dp"
+                    android:lineSpacingExtra="6dp"/>
 
                 <TextView
                     android:text="Langues"
@@ -174,7 +210,7 @@
                     android:textStyle="bold"
                     
                     android:textSize="16sp"
-                    android:textColor="@color/primaryDark"
+                    android:textColor="@color/hintText"
                     android:layout_marginBottom="8dp" />
 
                 <TextView
@@ -204,16 +240,29 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="24dp">
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="PARCOURS"
-                    android:icon="@drawable/graduation_cap_solid"
-                    android:textStyle="bold"
-                    android:textColor="@color/primaryDark"
-                    android:textSize="18sp"
+                    android:orientation="horizontal"
                     android:layout_marginTop="16dp"
-                    android:layout_marginBottom="12dp" />
+                    android:layout_marginBottom="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/graduation_cap_solid"
+                        app:tint="@color/primaryDark"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PARCOURS"
+                        android:textStyle="bold"
+                        android:textColor="@color/primaryDark"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -221,13 +270,12 @@
                     android:layout_marginBottom="16dp"/>
 
                 <TextView
-                    android:text="💼 EXPÉRIENCES PROFESSIONNELLES"
+                    android:text="Expériences Professionels"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    
                     android:textSize="16sp"
-                    android:textColor="@color/primaryDark"
+                    android:textColor="@color/hintText"
                     android:layout_marginBottom="8dp" />
 
                 <TextView
@@ -239,13 +287,13 @@
                     android:lineSpacingExtra="6dp"/>
 
                 <TextView
-                    android:text="🎓 FORMATIONS ACADÉMIQUES"
+                    android:text="Formations Académiques"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     
                     android:textSize="16sp"
-                    android:textColor="@color/primaryDark"
+                    android:textColor="@color/hintText"
                     android:layout_marginBottom="8dp" />
 
                 <TextView
@@ -275,16 +323,29 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="24dp">
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="PROJETS et CERTIFICATIONS"
-                    android:drawableLeft="@drawable/rocket_solid"
-                    android:textStyle="bold"
-                    android:textColor="@color/primaryDark"
-                    android:textSize="18sp"
+                    android:orientation="horizontal"
                     android:layout_marginTop="16dp"
-                    android:layout_marginBottom="12dp" />
+                    android:layout_marginBottom="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/rocket_solid"
+                        app:tint="@color/primaryDark"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PROJETS ET CERTIFICATIONS"
+                        android:textStyle="bold"
+                        android:textColor="@color/primaryDark"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -292,13 +353,13 @@
                     android:layout_marginBottom="16dp"/>
 
                 <TextView
-                    android:text="📜 CERTIFICATIONS"
+                    android:text="Certifications"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     
                     android:textSize="16sp"
-                    android:textColor="@color/primaryDark"
+                    android:textColor="@color/hintText"
                     android:layout_marginBottom="8dp" />
 
                 <TextView
@@ -310,13 +371,13 @@
                     android:lineSpacingExtra="6dp"/>
 
                 <TextView
-                    android:text="🚀 PROJETS"
+                    android:text="Projets"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     
                     android:textSize="16sp"
-                    android:textColor="@color/primaryDark"
+                    android:textColor="@color/hintText"
                     android:layout_marginBottom="8dp" />
 
                 <TextView
