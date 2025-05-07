@@ -64,4 +64,8 @@
         <item name="android:fontFamily">sans-serif</item>
     </style>
 
+    <style name="ShapeAppearanceOverlay.RoundedButton" parent="">
+        <item name="cornerSize">24dp</item>
+    </style>
+
 </resources>
