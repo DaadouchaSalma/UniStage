@@ -1,17 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
 
+    <!-- Header avec logo et titre -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp">
+
+        <ImageView
+            android:id="@+id/topImageCandidats"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/logo_mobile_g"
+            android:contentDescription="Logo"
+            app:tint="@color/primaryDark"/>
+
+        <TextView
+            android:id="@+id/titleCandidats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Liste Des Candidats"
+            android:textColor="@color/primaryDark"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <!-- ListView stylisé -->
     <ListView
         android:id="@+id/listViewCandidats"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <Button
-        android:id="@+id/buttonVoirDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Voir détails" />
+        android:layout_height="match_parent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="16dp"
+        android:scrollbars="vertical"/>
+
 </LinearLayout>

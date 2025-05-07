@@ -54,6 +54,17 @@ public class DetailsCandidatureActivity extends AppCompatActivity {
                         ((TextView) findViewById(R.id.detailLangues)).setText(doc.getString("langues"));
                         ((TextView) findViewById(R.id.detailCertifications)).setText(doc.getString("certifications"));
                         ((TextView) findViewById(R.id.detailProjets)).setText(doc.getString("projets"));
+                        db.collection("etudiant")
+                                .document(idEtudiant)
+                                .get()
+                                .addOnSuccessListener(etudoc -> {
+                                    String nom = etudoc.getString("lastName");
+                                    String prenom = etudoc.getString("firstName");
+                                    String email = etudoc.getString("email");
+
+                                    ((TextView) findViewById(R.id.detailNomComplet)).setText(prenom + " " + nom);
+                                    ((TextView) findViewById(R.id.detailEmail)).setText(email);
+                                });
 
                     } else {
                         Toast.makeText(this, "Candidature non trouvée.", Toast.LENGTH_SHORT).show();

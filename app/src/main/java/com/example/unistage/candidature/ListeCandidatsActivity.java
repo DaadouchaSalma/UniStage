@@ -14,23 +14,27 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ListeCandidatsActivity extends AppCompatActivity {
 
     private ListView listView;
     private FirebaseFirestore db;
-    private ArrayAdapter<String> adapter;
+
+    private CandidatAdapter adapter ;
     private List<String> listeAffichage = new ArrayList<>();
     private List<String> listeIdEtudiants = new ArrayList<>();
-
+    List<Map<String, String>> listeCandidats = new ArrayList<>();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_candidats);
 
-        listView = findViewById(R.id.listViewCandidats);
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listeAffichage);
+
+        ListView listView = findViewById(R.id.listViewCandidats);
+        adapter = new CandidatAdapter(this, listeCandidats);
         listView.setAdapter(adapter);
 
         db = FirebaseFirestore.getInstance();
@@ -64,12 +68,18 @@ public class ListeCandidatsActivity extends AppCompatActivity {
                                     String prenom = etudoc.getString("firstName");
                                     String email = etudoc.getString("email");
 
-                                    String texte = prenom + " " + nom + "\n" + email;
-                                    listeAffichage.add(texte);
+                                    // Créer une map contenant les données du candidat
+                                    Map<String, String> candidat = new HashMap<>();
+                                    candidat.put("nom", nom);
+                                    candidat.put("prenom", prenom);
+                                    candidat.put("email", email);
+
+                                    // Ajouter à la liste et mettre à jour l'adapter
+                                    listeCandidats.add(candidat);
                                     listeIdEtudiants.add(idEtudiant);
                                     adapter.notifyDataSetChanged();
                                 });
                     }
                 });
     }
-    }
+}
