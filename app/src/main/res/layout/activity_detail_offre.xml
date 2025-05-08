@@ -10,6 +10,8 @@
         android:padding="16dp"
         android:orientation="vertical">
 
+        <include layout="@layout/include_logout_button"/>
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
