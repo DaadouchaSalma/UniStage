@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -59,6 +60,7 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.ViewHolder> 
             context.startActivity(intent);
         });
 
+
     }
 
     @Override
@@ -76,6 +78,7 @@ public class OffreAdapter extends RecyclerView.Adapter<OffreAdapter.ViewHolder> 
             titre = itemView.findViewById(R.id.titreOffre);
             localisation = itemView.findViewById(R.id.localisationOffre);
             image = itemView.findViewById(R.id.imageOffre);
+
         }
     }
 }

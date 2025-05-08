@@ -26,7 +26,7 @@
             android:src="@drawable/logo_mobile_g"
             android:contentDescription="logo"
             android:layout_gravity="center"
-            android:tint="@color/primaryDark" />
+            app:tint="@color/primaryDark" />
 
         <TextView
             android:id="@+id/topText_2"

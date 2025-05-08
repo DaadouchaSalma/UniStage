@@ -33,7 +33,7 @@
         <TextView
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:id="@+id/textView_email"
+            android:id="@+id/textView_type"
             android:text="User"
             android:textColor="@android:color/white"
             android:textSize="14sp" />
