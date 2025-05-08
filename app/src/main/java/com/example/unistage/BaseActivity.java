@@ -30,11 +30,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected DrawerLayout drawerLayout;
     protected NavigationView navigationView;
     private ActionBarDrawerToggle drawerToggle;
+    protected FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_base_drawer);
+        mAuth = FirebaseAuth.getInstance();
 
         //Récuperer les views
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -63,9 +65,9 @@ public abstract class BaseActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, ListeOffresEncadrantActivity.class);
                 startActivity(intent);
             } else if (id == R.id.nav_logout) {
-                // Exemple : retour à l'écran de login
-                Intent intent = new Intent(this, LoginActivity.class); // remplace par ta classe
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // facultatif : clear back stack
+                mAuth.signOut();
+                Intent intent = new Intent(this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();
             }
