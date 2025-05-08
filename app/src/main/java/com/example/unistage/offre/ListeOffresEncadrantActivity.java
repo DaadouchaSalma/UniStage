@@ -8,13 +8,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.unistage.BaseActivity;
 import com.example.unistage.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListeOffresEncadrantActivity extends AppCompatActivity {
+public class ListeOffresEncadrantActivity extends BaseActivity {
 
     private RecyclerView recyclerView;
     private OffreEncadrantAdapter adapter;
@@ -24,7 +26,7 @@ public class ListeOffresEncadrantActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_liste_offres_encadrant);
+        //setContentView(R.layout.activity_liste_offres_encadrant);
 
         recyclerView = findViewById(R.id.recyclerViewOffresEncadrant);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -37,7 +39,11 @@ public class ListeOffresEncadrantActivity extends AppCompatActivity {
     }
 
     private void chargerOffres() {
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String encadrantId = user.getUid();
         db.collection("offres")
+                .whereEqualTo("idEncadrant", encadrantId)
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
@@ -66,5 +72,9 @@ public class ListeOffresEncadrantActivity extends AppCompatActivity {
                                 });
                     }
                 });
+    }
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_liste_offres_encadrant; // le layout spécifique à cette activité
     }
 }

@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.unistage.BaseActivity;
 import com.example.unistage.R;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -15,7 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UpdateOffreActivity extends AppCompatActivity {
+public class UpdateOffreActivity extends BaseActivity {
     EditText titreEditText, descriptionEditText,
             competencesEditText, localisationEditText, dureeEditText, nombrePlacesEditText;
     Button btnUpdate;
@@ -26,7 +27,7 @@ public class UpdateOffreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.update_offre_activity);
+       // setContentView(R.layout.update_offre_activity);
         db = FirebaseFirestore.getInstance();
         // Tu peux récupérer l'ID du document depuis un Intent
         //offreId = getIntent().getStringExtra("offreId");
@@ -104,5 +105,9 @@ public class UpdateOffreActivity extends AppCompatActivity {
         });
 
 
+    }
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.update_offre_activity; // le layout spécifique à cette activité
     }
 }
