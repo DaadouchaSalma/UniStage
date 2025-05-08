@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class ajouterCandActivity extends LogoutActivity {
+public class ajouterCandActivity extends AppCompatActivity {
     FirebaseFirestore db;
     EditText profilLinkedinInput, lienGithubInput, competencesInput, experiencesInput, formationsInput, languesInput, certificationsInput, projetsInput;
     Button btnCandidater;
@@ -27,7 +27,6 @@ public class ajouterCandActivity extends LogoutActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.ajout_candidature);
-        setupLogoutButton();
         db = FirebaseFirestore.getInstance();
         profilLinkedinInput = findViewById(R.id.profil_linkedin);
         lienGithubInput = findViewById(R.id.lien_github);
