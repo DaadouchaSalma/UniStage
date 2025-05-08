@@ -6,6 +6,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.unistage.BaseActivity;
 import com.example.unistage.R;
@@ -13,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class AddOffreActivity extends BaseActivity {
+public class AddOffreActivity extends AppCompatActivity {
     FirebaseFirestore db;
     EditText titreInput ;
     EditText descriptionInput ;
@@ -28,7 +29,7 @@ public class AddOffreActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         EdgeToEdge.enable(this);
-        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_add_offre);
         db = FirebaseFirestore.getInstance();
         titreInput = findViewById(R.id.titre);
         descriptionInput = findViewById(R.id.description);
@@ -79,8 +80,4 @@ public class AddOffreActivity extends BaseActivity {
         });
     }
 
-    @Override
-    protected int getLayoutResourceId() {
-        return R.layout.activity_add_offre; // le layout spécifique à cette activité
-    }
 }

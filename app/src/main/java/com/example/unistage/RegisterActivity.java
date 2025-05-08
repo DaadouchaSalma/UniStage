@@ -10,6 +10,8 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.unistage.offre.AddOffreActivity;
+import com.example.unistage.offre.ListOffreActivity;
+import com.example.unistage.offre.ListeOffresEncadrantActivity;
 import com.example.unistage.offre.UpdateOffreActivity;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.radiobutton.MaterialRadioButton;
@@ -141,7 +143,7 @@ public class RegisterActivity extends AppCompatActivity {
                                      .addOnSuccessListener(aVoid -> {
                                          // Redirection
                                          Toast.makeText(RegisterActivity.this, "Inscription réussie!", Toast.LENGTH_SHORT).show();
-                                         startActivity(new Intent(RegisterActivity.this, AddOffreActivity.class));
+                                         startActivity(new Intent(RegisterActivity.this, ListeOffresEncadrantActivity.class));
                                          finish();
                                      })
                                      .addOnFailureListener(e -> {
@@ -155,7 +157,7 @@ public class RegisterActivity extends AppCompatActivity {
                                      .addOnSuccessListener(aVoid -> {
                                          // Redirection
                                          Toast.makeText(RegisterActivity.this, "Inscription réussie!", Toast.LENGTH_SHORT).show();
-                                         startActivity(new Intent(RegisterActivity.this, UpdateOffreActivity.class));
+                                         startActivity(new Intent(RegisterActivity.this, ListOffreActivity.class));
                                          finish();
                                      })
                                      .addOnFailureListener(e -> {
