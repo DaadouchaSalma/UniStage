@@ -8,6 +8,8 @@
     android:background="@color/hintText"
     tools:context=".candidature.ajouterCandActivity">
 
+    <include layout="@layout/include_logout_button"/>
+
     <!-- Logo -->
     <ImageView
         android:id="@+id/topImage"

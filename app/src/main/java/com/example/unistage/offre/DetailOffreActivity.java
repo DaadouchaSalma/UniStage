@@ -9,10 +9,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.unistage.LogoutActivity;
 import com.example.unistage.R;
 import com.example.unistage.candidature.ajouterCandActivity;
 
-public class DetailOffreActivity extends AppCompatActivity {
+public class DetailOffreActivity extends LogoutActivity {
     TextView titre, description, competence, duree, localisation, places;
     ImageView image;
 
@@ -20,6 +21,7 @@ public class DetailOffreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_offre);
+        setupLogoutButton();
 
         titre = findViewById(R.id.detailTitre);
         description = findViewById(R.id.detailDescription);

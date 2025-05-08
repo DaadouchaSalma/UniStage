@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.unistage.BaseActivity;
+import com.example.unistage.LogoutActivity;
 import com.example.unistage.R;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -20,13 +21,14 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListOffreActivity extends BaseActivity {
+public class ListOffreActivity extends LogoutActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        //setContentView(R.layout.list_offre_activity);
+        setContentView(R.layout.list_offre_activity);
+        setupLogoutButton();
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
@@ -82,8 +84,8 @@ public class ListOffreActivity extends BaseActivity {
     deleteButton.setOnClickListener(v -> deleteOffre(documentId));
     */
     }
-    @Override
+    /*@Override
     protected int getLayoutResourceId() {
         return R.layout.list_offre_activity; // le layout spécifique à cette activité
-    }
+    }*/
 }
