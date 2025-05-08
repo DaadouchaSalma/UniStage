@@ -39,13 +39,14 @@
        <activity android:name=".offre.ListOffreActivity" />
         <activity android:name=".offre.DetailOffreActivity" />
 
-            <activity android:name=".offre.AddOffreActivity" />
+            <activity android:name=".offre.AddOffreActivity"  android:windowSoftInputMode="adjustResize" />
               <activity android:name=".candidature.ListeCandidatsActivity" />
  
         <activity android:name=".offre.ListeOffresEncadrantActivity" />
 
         <activity android:name=".candidature.ajouterCandActivity" />
         <activity android:name=".candidature.DetailsCandidatureActivity" />
+        <activity android:name=".RegisterActivity" />
 
 
     </application>
