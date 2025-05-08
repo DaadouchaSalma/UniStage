@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -41,6 +42,11 @@ public class OffreEncadrantAdapter extends RecyclerView.Adapter<OffreEncadrantAd
             intent.putExtra("idOffre", offre.getId());
             context.startActivity(intent);
         });
+        holder.btnEdit.setOnClickListener(v -> {
+            Intent intent = new Intent(context, UpdateOffreActivity.class);
+            intent.putExtra("idOffre", offre.getId());
+            context.startActivity(intent);
+        });
     }
 
     @Override
@@ -51,11 +57,13 @@ public class OffreEncadrantAdapter extends RecyclerView.Adapter<OffreEncadrantAd
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView titre;
         TextView nbCandidatures;
+        ImageButton btnEdit;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             titre = itemView.findViewById(R.id.titreOffreEncadrant);
             nbCandidatures = itemView.findViewById(R.id.nbCandidatures);
+            btnEdit = itemView.findViewById(R.id.btnEdit);
         }
     }
 }

@@ -7,8 +7,8 @@
     </string-array>
     <string name="nav_home">Accueil</string>
     <string name="nav_profile">Profil</string>
-    <string name="nav_offres">Offres</string>
-    <string name="nav_candidatures">Candidatures</string>
+    <string name="nav_offres">Ajouter Offre</string>
+    <string name="nav_candidatures">Liste Offres</string>
     <string name="nav_logout">Déconnexion</string>
     <string name="navigation_drawer_open">Open drawer</string>
     <string name="navigation_drawer_close">Close drawer</string>

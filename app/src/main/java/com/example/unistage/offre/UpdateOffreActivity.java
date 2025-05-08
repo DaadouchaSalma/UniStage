@@ -1,5 +1,6 @@
 package com.example.unistage.offre;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.unistage.BaseActivity;
 import com.example.unistage.R;
+import com.example.unistage.candidature.ajouterCandActivity;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -21,7 +23,7 @@ public class UpdateOffreActivity extends BaseActivity {
             competencesEditText, localisationEditText, dureeEditText, nombrePlacesEditText;
     Button btnUpdate;
     FirebaseFirestore db;
-    String offreId="yIPmN15IDuWuG2dAZaJx";
+    String offreId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +31,9 @@ public class UpdateOffreActivity extends BaseActivity {
         EdgeToEdge.enable(this);
        // setContentView(R.layout.update_offre_activity);
         db = FirebaseFirestore.getInstance();
-        // Tu peux récupérer l'ID du document depuis un Intent
-        //offreId = getIntent().getStringExtra("offreId");
+        offreId = getIntent().getStringExtra("idOffre");
+
+
         if (offreId != null) {
             db.collection("offres").document(offreId).get()
                     .addOnSuccessListener(documentSnapshot -> {
@@ -100,7 +103,10 @@ public class UpdateOffreActivity extends BaseActivity {
 
             DocumentReference docRef = db.collection("offres").document(offreId);
             docRef.update(updatedData)
-                    .addOnSuccessListener(aVoid -> Toast.makeText(this, "Offre mise à jour", Toast.LENGTH_SHORT).show())
+                    .addOnSuccessListener(aVoid ->
+                            { Toast.makeText(this, "Offre mise à jour", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(UpdateOffreActivity.this, ListeOffresEncadrantActivity.class)); }
+)
                     .addOnFailureListener(e -> Toast.makeText(this, "Erreur : " + e.getMessage(), Toast.LENGTH_SHORT).show());
         });
 

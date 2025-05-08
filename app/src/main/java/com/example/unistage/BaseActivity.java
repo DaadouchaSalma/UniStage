@@ -18,7 +18,12 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.unistage.candidature.ajouterCandActivity;
+import com.example.unistage.offre.AddOffreActivity;
+import com.example.unistage.offre.ListeOffresEncadrantActivity;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
@@ -47,12 +52,56 @@ public abstract class BaseActivity extends AppCompatActivity {
             contentFrame.addView(contentView);
         }
 
-        // Tu peux ici ajouter un listener pour gérer les clics du menu :
+
         navigationView.setNavigationItemSelectedListener(item -> {
-            // Gère les actions ici (ex: startActivity)
+            int id = item.getItemId();
+
+            if (id == R.id.nav_offres) {
+                Intent intent = new Intent(this, AddOffreActivity.class); // à adapter à ton activité
+                startActivity(intent);
+            } else if (id == R.id.nav_candidatures) {
+                Intent intent = new Intent(this, ListeOffresEncadrantActivity.class);
+                startActivity(intent);
+            } else if (id == R.id.nav_logout) {
+                // Exemple : retour à l'écran de login
+                Intent intent = new Intent(this, LoginActivity.class); // remplace par ta classe
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // facultatif : clear back stack
+                startActivity(intent);
+                finish();
+            }
+
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
         });
+        
+
+        // Récupère nav header
+        View headerView = navigationView.getHeaderView(0);
+        TextView nameTextView = headerView.findViewById(R.id.textView_name);
+        TextView typeTextView = headerView.findViewById(R.id.textView_type);
+
+       // Récupérer le user connecté
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        if (user != null) {
+            db.collection("encadrant").document(user.getUid()).get()
+                    .addOnSuccessListener(documentSnapshot -> {
+                        if (documentSnapshot.exists()) {
+                            String nom = documentSnapshot.getString("lastName");
+                            String prenom = documentSnapshot.getString("firstName");
+
+                            nameTextView.setText(nom + " " + prenom);
+                            typeTextView.setText("Encadrant");
+                        }
+                    })
+                    .addOnFailureListener(e -> {
+                        nameTextView.setText("Erreur de chargement");
+                        typeTextView.setText("");
+                    });
+        }
+
+
     }
 
     protected abstract int getLayoutResourceId();
