@@ -7,6 +7,7 @@
     android:background="?attr/selectableItemBackgroundBorderless"
     android:scaleType="center"
     app:icon="@drawable/ic_logout"
+    app:iconTint="@color/accent"
     app:iconPadding="8dp"
     app:iconSize="28dp"
     xmlns:android="http://schemas.android.com/apk/res/android"

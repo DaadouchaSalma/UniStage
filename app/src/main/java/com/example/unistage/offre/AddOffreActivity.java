@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class AddOffreActivity extends AppCompatActivity {
+public class AddOffreActivity extends BaseActivity {
     FirebaseFirestore db;
     EditText titreInput ;
     EditText descriptionInput ;
@@ -29,7 +29,7 @@ public class AddOffreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_add_offre);
+        //setContentView(R.layout.activity_add_offre);
         db = FirebaseFirestore.getInstance();
         titreInput = findViewById(R.id.titre);
         descriptionInput = findViewById(R.id.description);
@@ -78,6 +78,10 @@ public class AddOffreActivity extends AppCompatActivity {
                         Toast.makeText(this, "Erreur : " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     });
         });
+    }
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_add_offre; // le layout spécifique à cette activité
     }
 
 }

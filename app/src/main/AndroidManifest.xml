@@ -21,19 +21,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <!--intent-filter>
-                <action android:name="android.intent.action.MAIN" /-->
-            <!--Peut recevoir tout intent demandant des ACTION-VIEW-->
-            <!--action android:name="android.intent.action.VIEW" /-->
 
-            <!--Permet de recevoir n'importe quel intent implicite-->
-            <!--category android:name="android.intent.category.DEFAULT" /-->
-
-            <!--Permet de recevoir tout lien vers une page web (URL).-->
-            <!--category android:name="android.intent.category.BROWSABLE" /-->
-            <!--data android:scheme="http"/-->
-            <!--category android:name="android.intent.category.LAUNCHER" /-->
-            <!--/intent-filter-->
         </activity>
         <activity android:name=".offre.UpdateOffreActivity" />
        <activity android:name=".offre.ListOffreActivity" />
